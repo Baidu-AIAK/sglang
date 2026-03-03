@@ -1306,9 +1306,6 @@ class ServerArgs:
                         else:
                             self.enable_dp_attention = True
                             self.moe_dense_tp_size = 1
-                            assert (
-                                self.dp_size == 1
-                            ), "For round-robin split mode, dp attention is not supported."
                         assert (
                             self.tp_size == 8
                         ), "Current multi-machine CP support suffers from precision issues. So context parallel only support Single machine(tp_size == 8)"
